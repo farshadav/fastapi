@@ -10,8 +10,6 @@ While exploring the Wikipedia Python API, I noticed odd behavior:
 
 That’s when I learned that Wikipedia’s API uses **auto-suggest and fuzzy matching**, which can lead to surprising bugs.
 
----
-
 ### 💡 What this app shows
 
 This app includes **two search versions**, side by side:
@@ -25,11 +23,61 @@ This app includes **two search versions**, side by side:
 
 You can run both and compare how a single parameter (`auto_suggest`) improves reliability.
 
----
-
 ### 🚀 Quickstart
 
 #### 1. Clone this repo
 ```bash
-git clone https://github.com/yourusername/fastapi-wikipedia-comparison.git
-cd fastapi-wikipedia-comparison
+git clone https://github.com/farshadav/fastapi.git
+cd fastapi
+```
+
+#### 2. Install dependencies
+```bash
+pip install fastapi uvicorn wikipedia jinja2 python-multipart
+```
+
+#### 3. Run the app
+```bash
+python main.py
+```
+
+#### 4. Open in browser
+```
+http://127.0.0.1:8000/
+```
+
+Try searching for terms like:
+- `pizza`
+- `piazza`
+- `apple`
+- `python`
+
+### 📂 Project Structure
+
+```
+.
+├── main.py          ← FastAPI app with both versions
+└── templates/
+    ├── home.html    ← Input forms
+    └── result.html  ← Displays search results
+```
+
+### 📎 Built with
+
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [Wikipedia API (python-wikipedia)](https://pypi.org/project/wikipedia/)
+- [Jinja2](https://jinja.palletsprojects.com/)
+
+### 🤔 Ideas for extension
+
+- Add language selection (e.g., DE, FR, FA)
+- Let users choose from disambiguation options
+- Track search analytics or build a mini dashboard
+
+### 🙌 Contributing
+
+PRs and suggestions welcome. This is a learning-first project — clean, clear, and beginner-friendly.
+
+### 🧠 License
+
+MIT – use it, build on it, remix it.
