@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wikipedia Result Comparison</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h2>Search Results for "{{ query }}"</h2>
+
+    <div class="result">
+        <h3>🔹 Version A – Basic (default Wikipedia behavior)</h3>
+        {% if result_a %}
+            <p>{{ result_a }}</p>
+        {% elif error_a %}
+            <p class="error">{{ error_a }}</p>
+        {% endif %}
+    </div>
+
+    <div class="result">
+        <h3>🔸 Version B – Improved (auto_suggest=False + fallback)</h3>
+        {% if result_b %}
+            <p>{{ result_b }}</p>
+            {% if url_b %}
+                <p><a href="{{ url_b }}" target="_blank">Read more on Wikipedia →</a></p>
+            {% endif %}
+        {% elif error_b %}
+            <p class="error">{{ error_b }}</p>
+        {% endif %}
+    </div>
+
+    <p><a href="/">← Back to home</a></p>
+</body>
+</html>

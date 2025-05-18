@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wikipedia Search Comparison</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h1>Compare FastAPI Search Implementations</h1>
+    <p>Try searching a topic and see how both approaches return different results below:</p>
+
+    <form action="/result" method="post">
+        <input type="text" name="query" placeholder="Enter a topic" required>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
